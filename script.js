@@ -1,4 +1,3 @@
-// Text transition functionality
 const texts = ["Business Analyst", "Problem Solver", "Data Enthusiast"];
 let index = 0;
 
@@ -10,7 +9,7 @@ function changeText() {
 
 setInterval(changeText, 3000);
 
-// Optional: Smooth scroll functionality
+// Smooth scroll functionality
 document.querySelectorAll('.sidebar a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -20,39 +19,41 @@ document.querySelectorAll('.sidebar a').forEach(anchor => {
     });
 });
 
-// Carousel functionality
-let currentItem = 0;
+// Carousel and Detail View Functionality
 const carouselItems = document.querySelectorAll('.carousel-item');
-const detailsSections = document.querySelectorAll('.details');
+let currentCarouselIndex = 0;
 
-// Function to show the next carousel item
-function showNextItem() {
-    carouselItems[currentItem].classList.remove('active');
-    currentItem = (currentItem + 1) % carouselItems.length;
-    carouselItems[currentItem].classList.add('active');
+function showCarouselItem(index) {
+    carouselItems.forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+    });
 }
 
-// Function to show the previous carousel item
-function showPreviousItem() {
-    carouselItems[currentItem].classList.remove('active');
-    currentItem = (currentItem - 1 + carouselItems.length) % carouselItems.length;
-    carouselItems[currentItem].classList.add('active');
-}
-
-// Add click event listeners to "View Details" buttons
-document.querySelectorAll('.details-btn').forEach((button, index) => {
+document.querySelectorAll('.details-btn').forEach((button, idx) => {
     button.addEventListener('click', () => {
-        // Hide all carousel items and show the details section for the clicked item
-        carouselItems.forEach(item => item.classList.remove('active'));
-        detailsSections[index].classList.add('active');
+        showDetailSection(idx);
     });
 });
 
-// Add click event listeners to "Close" buttons in each details section
-document.querySelectorAll('.close-btn').forEach((button, index) => {
+function showDetailSection(index) {
+    const detailsSections = document.querySelectorAll('.details');
+    detailsSections.forEach((section, i) => {
+        section.style.display = i === index ? 'flex' : 'none';
+    });
+    carouselItems[currentCarouselIndex].style.display = 'none';
+}
+
+document.querySelectorAll('.close-btn').forEach((button, idx) => {
     button.addEventListener('click', () => {
-        // Hide the details section and show the carousel again
-        detailsSections[index].classList.remove('active');
-        carouselItems[currentItem].classList.add('active');
+        hideDetailSection(idx);
     });
 });
+
+function hideDetailSection(index) {
+    const detailsSections = document.querySelectorAll('.details');
+    detailsSections[index].style.display = 'none';
+    carouselItems[currentCarouselIndex].style.display = 'flex';
+}
+
+// Initial display setup
+showCarouselItem(currentCarouselIndex);
