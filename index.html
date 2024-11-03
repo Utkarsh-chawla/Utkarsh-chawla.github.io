@@ -25,39 +25,41 @@
                     <span class="changing-text">I am a Business Analyst.</span>
                 </div>
             </section>
+            
+            <!-- Work Experience Section with Cards -->
             <section id="work" class="section full-screen">
                 <h2>Work Experience</h2>
-                <div class="work-cards">
-                    <!-- Card for Good Business Lab -->
-                    <div class="work-card" data-index="0">
-                        <h3>Business Analyst at Good Business Lab</h3>
-                        <button class="details-btn">View Details</button>
+                <div class="experience-cards">
+                    <div class="card">
+                        <h3>Good Business Lab</h3>
+                        <p>Business Analyst working on Inache, an initiative to improve business solutions.</p>
+                        <button onclick="showDetails('Good Business Lab', 'Business Analyst working on Inache, enhancing business solutions.', 'Contributed to feature development, enhanced user experience.', 'Excel, SQL', 'Full-time', 'March 2022 - Present')">View Details</button>
                     </div>
-                    <!-- Card for GfK -->
-                    <div class="work-card" data-index="1">
-                        <h3>Junior Analyst at GfK</h3>
-                        <button class="details-btn">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Work Details Container -->
-                <div class="details-container" id="details-container">
-                    <button class="back-button" onclick="hideDetails()">Back</button>
-                    <h3 id="details-title"></h3>
-                    <p id="details-description"></p>
-                    <div class="details-info">
-                        <h4>My Contribution</h4>
-                        <p id="details-contribution"></p>
-                        <h4>Tools</h4>
-                        <p id="details-tools"></p>
-                        <h4>Type</h4>
-                        <p id="details-type"></p>
-                        <h4>Time</h4>
-                        <p id="details-time"></p>
+                    <div class="card">
+                        <h3>GfK</h3>
+                        <p>Junior Analyst focused on data insights and consumer research.</p>
+                        <button onclick="showDetails('GfK', 'Junior Analyst in consumer insights and data.', 'Analyzed consumer behavior, presented insights to stakeholders.', 'Power BI, Python', 'Internship', 'June 2021 - Feb 2022')">View Details</button>
                     </div>
                 </div>
-
             </section>
+
+            <!-- Work Details Container -->
+            <div class="details-container" id="details-container">
+                <button class="back-button" onclick="hideDetails()">Back</button>
+                <h3 id="details-title"></h3>
+                <p id="details-description"></p>
+                <div class="details-info">
+                    <h4>My Contribution</h4>
+                    <p id="details-contribution"></p>
+                    <h4>Tools</h4>
+                    <p id="details-tools"></p>
+                    <h4>Type</h4>
+                    <p id="details-type"></p>
+                    <h4>Time</h4>
+                    <p id="details-time"></p>
+                </div>
+            </div>
+
             <section id="about" class="section full-screen">
                 <h2>About Me</h2>
                 <p>Details about your background, interests, and anything else you want to share.</p>
