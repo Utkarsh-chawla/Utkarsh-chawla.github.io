@@ -1,13 +1,48 @@
-const texts = ["Business Analyst", "Problem Solver", "Data Enthusiast"];
+const texts = ["Business Analyst", "Problem Solver", "Entrepreneur"];
 let index = 0;
 
-function changeText() {
-    const changingText = document.querySelector('.changing-text');
-    changingText.textContent = texts[index];
-    index = (index + 1) % texts.length;
+function typeWriterEffect(text, i, fnCallback) {
+    if (i < text.length) {
+        document.querySelector('.changing-text').textContent += text.charAt(i);
+        setTimeout(() => {
+            typeWriterEffect(text, i + 1, fnCallback);
+        }, 100);
+    } else {
+        setTimeout(() => {
+            eraseText(text, 0, fnCallback);
+        }, 1000);
+    }
 }
 
-setInterval(changeText, 3000);
+function eraseText(text, i, fnCallback) {
+    if (i < text.length) {
+        document.querySelector('.changing-text').textContent = text.substring(0, text.length - i);
+        setTimeout(() => {
+            eraseText(text, i + 1, fnCallback);
+        }, 50);
+    } else {
+        index++;
+        if (index >= texts.length) index = 0;
+        setTimeout(() => {
+            typeWriterEffect(texts[index], 0, fnCallback);
+        }, 500);
+    }
+}
+
+typeWriterEffect(texts[index], 0, () => {});
+
+document.querySelectorAll('.view-details').forEach(button => {
+    button.addEventListener('click', function() {
+        const target = this.getAttribute('data-target');
+        document.getElementById(target).style.display = 'block';
+    });
+});
+
+document.querySelectorAll('.back-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        this.closest('.detail-view').style.display = 'none';
+    });
+});
 
 // Optional: Smooth scroll functionality
 document.querySelectorAll('.sidebar a').forEach(anchor => {
@@ -18,22 +53,3 @@ document.querySelectorAll('.sidebar a').forEach(anchor => {
         });
     });
 });
-
-// Show details function
-function showDetails(company, description, contribution, tools, type, time) {
-    document.getElementById('details-title').textContent = company;
-    document.getElementById('details-description').textContent = description;
-    document.getElementById('details-contribution').textContent = contribution;
-    document.getElementById('details-tools').textContent = tools;
-    document.getElementById('details-type').textContent = type;
-    document.getElementById('details-time').textContent = time;
-
-    const detailsContainer = document.getElementById('details-container');
-    detailsContainer.classList.add('show'); // Show details
-}
-
-// Hide details function
-function hideDetails() {
-    const detailsContainer = document.getElementById('details-container');
-    detailsContainer.classList.remove('show'); // Hide details
-}
