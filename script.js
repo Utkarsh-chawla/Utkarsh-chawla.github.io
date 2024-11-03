@@ -22,13 +22,15 @@ document.querySelectorAll('.sidebar a').forEach(anchor => {
 // Show details with left slide transition
 document.querySelectorAll('.details-btn').forEach((button, idx) => {
     button.addEventListener('click', () => {
-        document.querySelector(`#details-${idx}`).classList.add('active');
+        const detailsContainer = document.querySelector(`#details-${idx}`);
+        detailsContainer.classList.add('active');
     });
 });
 
-// Close button to hide details and slide back
-document.querySelectorAll('.close-btn').forEach((button, idx) => {
+// Back button to hide details and slide back
+document.querySelectorAll('.back-btn').forEach((button, idx) => {
     button.addEventListener('click', () => {
-        document.querySelector(`#details-${idx}`).classList.remove('active');
+        const detailsContainer = document.querySelector(`#details-${idx}`);
+        detailsContainer.classList.remove('active');
     });
 });
