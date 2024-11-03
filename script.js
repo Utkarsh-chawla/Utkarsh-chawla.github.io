@@ -19,41 +19,16 @@ document.querySelectorAll('.sidebar a').forEach(anchor => {
     });
 });
 
-// Carousel and Detail View Functionality
-const carouselItems = document.querySelectorAll('.carousel-item');
-let currentCarouselIndex = 0;
-
-function showCarouselItem(index) {
-    carouselItems.forEach((item, i) => {
-        item.classList.toggle('active', i === index);
-    });
-}
-
+// Show details with left slide transition
 document.querySelectorAll('.details-btn').forEach((button, idx) => {
     button.addEventListener('click', () => {
-        showDetailSection(idx);
+        document.querySelector(`#details-${idx}`).classList.add('active');
     });
 });
 
-function showDetailSection(index) {
-    const detailsSections = document.querySelectorAll('.details');
-    detailsSections.forEach((section, i) => {
-        section.style.display = i === index ? 'flex' : 'none';
-    });
-    carouselItems[currentCarouselIndex].style.display = 'none';
-}
-
+// Close button to hide details and slide back
 document.querySelectorAll('.close-btn').forEach((button, idx) => {
     button.addEventListener('click', () => {
-        hideDetailSection(idx);
+        document.querySelector(`#details-${idx}`).classList.remove('active');
     });
 });
-
-function hideDetailSection(index) {
-    const detailsSections = document.querySelectorAll('.details');
-    detailsSections[index].style.display = 'none';
-    carouselItems[currentCarouselIndex].style.display = 'flex';
-}
-
-// Initial display setup
-showCarouselItem(currentCarouselIndex);
