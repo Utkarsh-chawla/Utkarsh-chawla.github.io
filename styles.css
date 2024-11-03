@@ -3,6 +3,7 @@ body {
     margin: 0;
     background-color: #f0f0f0;
     color: #333;
+    overflow-x: hidden;
 }
 
 .container {
@@ -46,6 +47,18 @@ body {
 
 .section {
     padding: 60px 20px;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.full-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
 }
 
 .dynamic-text {
