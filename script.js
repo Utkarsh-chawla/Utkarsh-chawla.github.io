@@ -9,7 +9,7 @@ function changeText() {
 
 setInterval(changeText, 3000);
 
-// Smooth scroll functionality
+// Optional: Smooth scroll functionality
 document.querySelectorAll('.sidebar a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -19,18 +19,21 @@ document.querySelectorAll('.sidebar a').forEach(anchor => {
     });
 });
 
-// Show details with left slide transition
-document.querySelectorAll('.details-btn').forEach((button, idx) => {
-    button.addEventListener('click', () => {
-        const detailsContainer = document.querySelector(`#details-${idx}`);
-        detailsContainer.classList.add('active');
-    });
-});
+// Show details function
+function showDetails(company, description, contribution, tools, type, time) {
+    document.getElementById('details-title').textContent = company;
+    document.getElementById('details-description').textContent = description;
+    document.getElementById('details-contribution').textContent = contribution;
+    document.getElementById('details-tools').textContent = tools;
+    document.getElementById('details-type').textContent = type;
+    document.getElementById('details-time').textContent = time;
 
-// Back button to hide details and slide back
-document.querySelectorAll('.back-btn').forEach((button, idx) => {
-    button.addEventListener('click', () => {
-        const detailsContainer = document.querySelector(`#details-${idx}`);
-        detailsContainer.classList.remove('active');
-    });
-});
+    const detailsContainer = document.getElementById('details-container');
+    detailsContainer.classList.add('show'); // Show details
+}
+
+// Hide details function
+function hideDetails() {
+    const detailsContainer = document.getElementById('details-container');
+    detailsContainer.classList.remove('show'); // Hide details
+}
