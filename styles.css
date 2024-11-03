@@ -146,20 +146,22 @@ body {
     transform: translateX(-100%);
 }
 
-.back-btn {
+/* Detailed View Back Button Styling */
+.back-button {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 15px;
-    font-size: 14px;
-    background-color: #007BFF;
-    color: white;
+    top: 20px; /* Adjust this value for a lower position */
+    left: 20px; /* Or set it to right: 20px if preferred */
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 14px;
+    z-index: 15;
+    transition: background-color 0.3s ease;
 }
 
-.back-btn:hover {
-    background-color: #0056b3;
+.back-button:hover {
+    background-color: #555;
 }
