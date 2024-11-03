@@ -74,15 +74,6 @@ body {
 .changing-text {
     font-weight: bold; /* Make the typewriter text bold */
     display: inline-block;
-    animation: textChange 5s infinite;
-}
-
-@keyframes textChange {
-    0% { opacity: 0; }
-    25% { opacity: 1; }
-    50% { opacity: 0; }
-    75% { opacity: 0; }
-    100% { opacity: 1; }
 }
 
 .experience-cards {
