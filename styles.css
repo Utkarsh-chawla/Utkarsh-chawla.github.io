@@ -25,4 +25,140 @@ body {
 }
 
 .sidebar h1 {
-    color: #33
+    color: #333; /* Set text color for the title */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: #333; /* Set text color for the links */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+.main-content {
+    margin-left: 220px; /* Adjusted margin to account for sidebar */
+    flex-grow: 1;
+}
+
+.section {
+    padding: 60px 20px;
+    height: 100vh; /* Full height for each section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.dynamic-text {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.changing-text {
+    display: inline-block;
+    animation: textChange 5s infinite;
+}
+
+@keyframes textChange {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Carousel and Details Section Styles */
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.carousel-item {
+    display: none;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.details-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+    background-color: #0056b3;
+}
+
+.details {
+    display: none; /* Hidden by default */
+    margin-top: 20px;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details.active {
+    display: block; /* Show active details section */
+}
+
+.contribution-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contribution, .info {
+    width: 45%;
+}
+
+.contribution h5, .info h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #0056b3;
+}
