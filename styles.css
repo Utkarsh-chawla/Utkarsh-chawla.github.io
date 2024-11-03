@@ -11,21 +11,21 @@ body {
 }
 
 .sidebar {
-    width: 200px; /* Fixed width for the sidebar */
+    width: 200px;
     position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers the items vertically */
-    align-items: center; /* Centers the items horizontally */
+    justify-content: center;
+    align-items: center;
     padding: 20px 0;
-    background-color: transparent; /* Removed background color */
+    background-color: transparent;
 }
 
 .sidebar h1 {
-    color: #333; /* Set text color for the title */
+    color: #333;
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -40,28 +40,28 @@ body {
 }
 
 .sidebar a {
-    color: #333; /* Set text color for the links */
+    color: #333;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s;
 }
 
 .sidebar a:hover {
-    color: #007BFF; /* Change color on hover */
+    color: #007BFF;
 }
 
 .main-content {
-    margin-left: 220px; /* Adjusted margin to account for sidebar */
+    margin-left: 220px;
     flex-grow: 1;
 }
 
 .section {
     padding: 60px 20px;
-    height: 100vh; /* Full height for each section */
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center;
+    align-items: center;
     opacity: 1;
     transition: opacity 0.5s;
 }
@@ -84,32 +84,34 @@ body {
     100% { opacity: 1; }
 }
 
-/* Carousel and Details Section Styles */
+/* Carousel Styling */
 .carousel {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .carousel-item {
+    min-width: 100%;
     display: none;
     text-align: center;
-    transition: opacity 0.5s ease;
+    flex-direction: column;
+    align-items: center;
 }
 
 .carousel-item.active {
-    display: block;
+    display: flex;
 }
 
 .details-btn {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
     margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
@@ -118,47 +120,42 @@ body {
     background-color: #0056b3;
 }
 
+/* Detailed Section Styling */
 .details {
-    display: none; /* Hidden by default */
-    margin-top: 20px;
+    display: none;
+    flex-direction: column;
     text-align: left;
-    background-color: #ffffff;
     padding: 20px;
-    border-radius: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 600px;
 }
 
-.details.active {
-    display: block; /* Show active details section */
+.details h3 {
+    margin-top: 0;
 }
 
-.contribution-section {
+.details-info {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-}
-
-.contribution, .info {
-    width: 45%;
-}
-
-.contribution h5, .info h5 {
-    font-weight: bold;
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 .close-btn {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
+    margin-top: 15px;
+    padding: 10px 15px;
     font-size: 14px;
     cursor: pointer;
+    border: none;
+    background-color: #dc3545;
+    color: white;
     border-radius: 5px;
-    margin-top: 15px;
     transition: background-color 0.3s;
 }
 
 .close-btn:hover {
-    background-color: #0056b3;
+    background-color: #c82333;
 }
