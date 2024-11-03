@@ -25,18 +25,64 @@
                     <span class="changing-text">I am a Business Analyst.</span>
                 </div>
             </section>
+
             <section id="work" class="section full-screen">
                 <h2>Work Experience</h2>
-                <div class="experience">
-                    <h3>Business Analyst at Good Business Lab</h3>
-                    <p>Description of your role and responsibilities.</p>
-                    <h3>Junior Analyst at GfK</h3>
-                    <p>Description of your role and responsibilities.</p>
+                <div class="carousel">
+                    <div class="carousel-item active" id="good-business-lab">
+                        <h3>Good Business Lab</h3>
+                        <p>Working on the Inache product, which is designed to streamline operations and enhance business performance.</p>
+                        <button class="details-btn" onclick="showDetails('good-business-lab-details')">View Details</button>
+                    </div>
+                    <div class="carousel-item" id="gfk">
+                        <h3>GfK</h3>
+                        <p>Worked as a Junior Analyst, contributing to market research and data analysis for various projects.</p>
+                        <button class="details-btn" onclick="showDetails('gfk-details')">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="details" id="good-business-lab-details" style="display:none;">
+                    <h4>Good Business Lab - Inache</h4>
+                    <div class="contribution-section">
+                        <div class="contribution">
+                            <h5>My Contributions</h5>
+                            <p>Led the initiative to enhance user engagement and streamline data processing.</p>
+                        </div>
+                        <div class="info">
+                            <h5>Details</h5>
+                            <ul>
+                                <li>Tools: SQL, Python</li>
+                                <li>Type: Work</li>
+                                <li>Time: Jan 2023 - Present</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button onclick="closeDetails('good-business-lab-details')">Close</button>
+                </div>
+
+                <div class="details" id="gfk-details" style="display:none;">
+                    <h4>GfK - Junior Analyst</h4>
+                    <div class="contribution-section">
+                        <div class="contribution">
+                            <h5>My Contributions</h5>
+                            <p>Analyzed consumer data to derive insights that drove business strategy.</p>
+                        </div>
+                        <div class="info">
+                            <h5>Details</h5>
+                            <ul>
+                                <li>Tools: SPSS, Excel</li>
+                                <li>Type: Internship</li>
+                                <li>Time: June 2021 - Dec 2022</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button onclick="closeDetails('gfk-details')">Close</button>
                 </div>
             </section>
+
             <section id="about" class="section full-screen">
                 <h2>About Me</h2>
-                <p>Details about your background, interests, and anything else you want to share.</p>
+                <p>Detail-oriented Business Analyst with experience in conducting analysis and research to solve business problems.</p>
             </section>
         </main>
     </div>
