@@ -1,30 +1,49 @@
-const dynamicText = document.getElementById("dynamic-text");
-const texts = ["Business Analyst", "Problem Solver"];
-let index = 0;
-let charIndex = 0;
-let currentText = "";
-let isDeleting = false;
+document.addEventListener("DOMContentLoaded", function() {
+    const roles = ["Business Analyst", "Problem Solver"];
+    let currentIndex = 0;
+    const dynamicText = document.querySelector(".dynamic-text");
 
-function type() {
-    if (isDeleting) {
-        currentText = texts[index].substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        currentText = texts[index].substring(0, charIndex + 1);
-        charIndex++;
+    function changeRole() {
+        const currentRole = roles[currentIndex];
+        const nextRole = roles[(currentIndex + 1) % roles.length];
+        const fullText = currentRole + " ";
+
+        dynamicText.innerHTML = fullText;
+
+        // Simulate backspace effect
+        let i = fullText.length;
+        const backspace = setInterval(() => {
+            if (i-- > 0) {
+                dynamicText.innerHTML = fullText.substring(0, i);
+            } else {
+                clearInterval(backspace);
+                // Switch to next role after a pause
+                setTimeout(() => {
+                    dynamicText.innerHTML = "";
+                    currentIndex = (currentIndex + 1) % roles.length;
+                    changeRole();
+                }, 500);
+            }
+        }, 100);
     }
 
-    dynamicText.textContent = currentText;
+    changeRole();
 
-    if (!isDeleting && charIndex === texts[index].length) {
-        isDeleting = true;
-        setTimeout(type, 2000); // Pause before deleting
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        index = (index + 1) % texts.length; // Move to next text
-    }
-
-    setTimeout(type, isDeleting ? 100 : 150);
-}
-
-document.addEventListener("DOMContentLoaded", type);
+    // Scroll animation
+    const sections = document.querySelectorAll("section");
+    const observerOptions = {
+        root: null,
+        threshold: 0.1
+    };
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+            }
+        });
+    };
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
