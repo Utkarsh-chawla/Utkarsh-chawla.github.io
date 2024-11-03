@@ -11,17 +11,23 @@ body {
 }
 
 .sidebar {
-    width: 250px;
-    background-color: #2c3e50;
-    padding: 20px;
-    height: 100vh;
+    width: 200px; /* Fixed width for the sidebar */
     position: fixed;
-    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the items vertically */
+    align-items: center; /* Centers the items horizontally */
+    padding: 20px 0;
+    background-color: transparent; /* Removed background color */
 }
 
 .sidebar h1 {
-    color: #ecf0f1;
+    color: #333; /* Set text color for the title */
     font-size: 24px;
+    margin-bottom: 20px;
 }
 
 .sidebar ul {
@@ -34,31 +40,30 @@ body {
 }
 
 .sidebar a {
-    color: #ecf0f1;
+    color: #333; /* Set text color for the links */
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #007BFF; /* Change color on hover */
 }
 
 .main-content {
-    margin-left: 250px;
-    padding: 20px;
+    margin-left: 220px; /* Adjusted margin to account for sidebar */
     flex-grow: 1;
 }
 
 .section {
     padding: 60px 20px;
-    opacity: 1;
-    transition: opacity 0.5s;
-}
-
-.full-screen {
-    height: 100vh;
+    height: 100vh; /* Full height for each section */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 .dynamic-text {
