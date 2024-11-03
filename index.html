@@ -20,45 +20,35 @@
         <main class="main-content">
             <section id="home" class="section full-screen">
                 <h2>Hi,</h2>
-                <div class="dynamic-text">
-                    <span>I am Utkarsh Chawla,</span>
-                    <span class="changing-text">I am a Business Analyst.</span>
-                </div>
+                <h2>I am Utkarsh Chawla</h2>
+                <h2>I am a <span class="changing-text">Business Analyst</span></h2>
             </section>
-            
-            <!-- Work Experience Section with Cards -->
+
             <section id="work" class="section full-screen">
                 <h2>Work Experience</h2>
                 <div class="experience-cards">
                     <div class="card">
                         <h3>Good Business Lab</h3>
-                        <p>Business Analyst working on Inache, an initiative to improve business solutions.</p>
-                        <button onclick="showDetails('Good Business Lab', 'Business Analyst working on Inache, enhancing business solutions.', 'Contributed to feature development, enhanced user experience.', 'Excel, SQL', 'Full-time', 'March 2022 - Present')">View Details</button>
+                        <p>Working on Inache.</p>
+                        <button class="view-details" data-target="good-business-lab">View Details</button>
                     </div>
                     <div class="card">
                         <h3>GfK</h3>
-                        <p>Junior Analyst focused on data insights and consumer research.</p>
-                        <button onclick="showDetails('GfK', 'Junior Analyst in consumer insights and data.', 'Analyzed consumer behavior, presented insights to stakeholders.', 'Power BI, Python', 'Internship', 'June 2021 - Feb 2022')">View Details</button>
+                        <p>Junior Analyst.</p>
+                        <button class="view-details" data-target="gfk">View Details</button>
                     </div>
                 </div>
-            </section>
-
-            <!-- Work Details Container -->
-            <div class="details-container" id="details-container">
-                <button class="back-button" onclick="hideDetails()">Back</button>
-                <h3 id="details-title"></h3>
-                <p id="details-description"></p>
-                <div class="details-info">
-                    <h4>My Contribution</h4>
-                    <p id="details-contribution"></p>
-                    <h4>Tools</h4>
-                    <p id="details-tools"></p>
-                    <h4>Type</h4>
-                    <p id="details-type"></p>
-                    <h4>Time</h4>
-                    <p id="details-time"></p>
+                <div id="good-business-lab" class="detail-view">
+                    <button class="back-btn">Back</button>
+                    <h3>Good Business Lab</h3>
+                    <p>Description about your role and responsibilities at Good Business Lab.</p>
                 </div>
-            </div>
+                <div id="gfk" class="detail-view">
+                    <button class="back-btn">Back</button>
+                    <h3>GfK</h3>
+                    <p>Description about your role and responsibilities at GfK.</p>
+                </div>
+            </section>
 
             <section id="about" class="section full-screen">
                 <h2>About Me</h2>
