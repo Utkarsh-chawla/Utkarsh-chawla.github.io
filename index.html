@@ -3,46 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Utkarsh Chawla</title>
+    <title>Utkarsh Chawla - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-    </nav>
-    <div class="content">
-        <section id="home">
-            <h1>Hi,</h1>
-            <h2>I am Utkarsh Chawla,</h2>
-            <h2 id="role">I am a <span class="dynamic-text">Business Analyst</span></h2>
-        </section>
-        <section id="work">
-            <h2>Work Experience</h2>
-            <div class="experience">
-                <h3>Business Analyst at Good Business Lab</h3>
-                <ul>
-                    <li>Conducted data analysis to improve business processes.</li>
-                    <li>Collaborated with cross-functional teams to identify solutions.</li>
-                </ul>
-            </div>
-            <div class="experience">
-                <h3>Junior Analyst at GfK</h3>
-                <ul>
-                    <li>Assisted in market research projects and data collection.</li>
-                    <li>Analyzed data trends to provide actionable insights.</li>
-                </ul>
-            </div>
-        </section>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a detail-oriented Business Analyst with a passion for problem-solving and driving business improvements through data analysis and research.</p>
-        </section>
+    <div class="container">
+        <nav class="sidebar">
+            <h1>Utkarsh Chawla</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <section id="home" class="section">
+                <h2>Hi,</h2>
+                <div class="dynamic-text">
+                    <span>I am Utkarsh Chawla,</span>
+                    <span class="changing-text">I am a Business Analyst.</span>
+                </div>
+            </section>
+            <section id="work" class="section">
+                <h2>Work Experience</h2>
+                <div class="experience">
+                    <h3>Business Analyst at Good Business Lab</h3>
+                    <p>Description of your role and responsibilities.</p>
+                    <h3>Junior Analyst at GfK</h3>
+                    <p>Description of your role and responsibilities.</p>
+                    <h3>Another Position</h3>
+                    <p>Description of your role and responsibilities.</p>
+                </div>
+            </section>
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <p>Details about your background, interests, and anything else you want to share.</p>
+            </section>
+        </main>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
