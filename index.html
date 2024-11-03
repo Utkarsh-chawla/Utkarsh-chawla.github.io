@@ -25,64 +25,58 @@
                     <span class="changing-text">I am a Business Analyst.</span>
                 </div>
             </section>
-
+            
             <section id="work" class="section full-screen">
                 <h2>Work Experience</h2>
+
                 <div class="carousel">
-                    <div class="carousel-item active" id="good-business-lab">
-                        <h3>Good Business Lab</h3>
-                        <p>Working on the Inache product, which is designed to streamline operations and enhance business performance.</p>
-                        <button class="details-btn" onclick="showDetails('good-business-lab-details')">View Details</button>
+                    <!-- Good Business Lab Experience -->
+                    <div class="carousel-item active">
+                        <h3>Business Analyst at Good Business Lab</h3>
+                        <p>Working on Inache, a platform that incentivizes factories for improving worker well-being through awareness programs.</p>
+                        <button class="details-btn">View Details</button>
                     </div>
-                    <div class="carousel-item" id="gfk">
-                        <h3>GfK</h3>
-                        <p>Worked as a Junior Analyst, contributing to market research and data analysis for various projects.</p>
-                        <button class="details-btn" onclick="showDetails('gfk-details')">View Details</button>
+
+                    <!-- GfK Experience -->
+                    <div class="carousel-item">
+                        <h3>Junior Analyst at GfK</h3>
+                        <p>GfK is a global leader in market and consumer data, providing insights and analytics to help businesses make informed decisions.</p>
+                        <button class="details-btn">View Details</button>
                     </div>
-                </div>
-                
-                <div class="details" id="good-business-lab-details" style="display:none;">
-                    <h4>Good Business Lab - Inache</h4>
-                    <div class="contribution-section">
-                        <div class="contribution">
-                            <h5>My Contributions</h5>
-                            <p>Led the initiative to enhance user engagement and streamline data processing.</p>
-                        </div>
-                        <div class="info">
-                            <h5>Details</h5>
-                            <ul>
-                                <li>Tools: SQL, Python</li>
-                                <li>Type: Work</li>
-                                <li>Time: Jan 2023 - Present</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button onclick="closeDetails('good-business-lab-details')">Close</button>
                 </div>
 
-                <div class="details" id="gfk-details" style="display:none;">
-                    <h4>GfK - Junior Analyst</h4>
-                    <div class="contribution-section">
-                        <div class="contribution">
-                            <h5>My Contributions</h5>
-                            <p>Analyzed consumer data to derive insights that drove business strategy.</p>
-                        </div>
-                        <div class="info">
-                            <h5>Details</h5>
-                            <ul>
-                                <li>Tools: SPSS, Excel</li>
-                                <li>Type: Internship</li>
-                                <li>Time: June 2021 - Dec 2022</li>
-                            </ul>
-                        </div>
+                <!-- Detailed Section for Good Business Lab -->
+                <div class="details">
+                    <h3>Good Business Lab - Business Analyst</h3>
+                    <p><strong>Contribution:</strong> Led data analysis for the Inache platform, created dashboards for incentive tracking, and improved program reporting accuracy.</p>
+                    <p><strong>Projects Led:</strong> Streamlined reporting, developed KPI metrics, and collaborated with factory teams to enhance participation.</p>
+                    <p><strong>Initiatives Taken:</strong> Launched user feedback sessions to refine platform usability.</p>
+                    <div class="details-info">
+                        <p><strong>Tools:</strong> SQL, Power BI, Looker Studio</p>
+                        <p><strong>Type:</strong> Business Analysis</p>
+                        <p><strong>Time:</strong> March 2023 - Present</p>
                     </div>
-                    <button onclick="closeDetails('gfk-details')">Close</button>
+                    <button class="close-btn">Close</button>
+                </div>
+
+                <!-- Detailed Section for GfK -->
+                <div class="details">
+                    <h3>GfK - Junior Analyst</h3>
+                    <p><strong>Contribution:</strong> Analyzed consumer data trends, generated insights for market forecasts, and supported product teams with data-driven decisions.</p>
+                    <p><strong>Projects Led:</strong> Developed market analysis reports, initiated data quality improvement processes.</p>
+                    <p><strong>Initiatives Taken:</strong> Proposed and implemented weekly team workshops on advanced data analysis techniques.</p>
+                    <div class="details-info">
+                        <p><strong>Tools:</strong> Excel, SQL, PowerPoint</p>
+                        <p><strong>Type:</strong> Data Analysis</p>
+                        <p><strong>Time:</strong> August 2021 - February 2023</p>
+                    </div>
+                    <button class="close-btn">Close</button>
                 </div>
             </section>
 
             <section id="about" class="section full-screen">
                 <h2>About Me</h2>
-                <p>Detail-oriented Business Analyst with experience in conducting analysis and research to solve business problems.</p>
+                <p>Details about your background, interests, and anything else you want to share.</p>
             </section>
         </main>
     </div>
